@@ -38,19 +38,22 @@ with open(file_path, 'w', newline='') as file:
             'access_token': 'eyJhbGciOiJSUzI1NiIsImtpZCI6ImFjY291bnRzLmp3dC5hY2Nlc3MtdG9rZW4iLCJ0eXAiOiJKV1QifQ.eyJpc3MiOiJodHRwczovL2FjY291bnRzLmJ1a2FsYXBhay5jb20vIiwic3ViIjoiMjMxZDRhODY5MDVmMGYyNjJjNWUwM2ZjIiwiYXVkIjpbImh0dHBzOi8vYWNjb3VudHMuYnVrYWxhcGFrLmNvbSIsImh0dHBzOi8vYXBpLmJ1a2FsYXBhay5jb20iLCJodHRwczovL2FwaS5zZXJ2ZXJtaXRyYS5jb20iXSwiZXhwIjoxNjg3MzUzMjQzLCJuYmYiOjE2ODczNDQ4NDMsImlhdCI6MTY4NzM0NDg0MywianRpIjoiOXAzb0RjUXhBN3ppN0ZiaGJ5VzlrdyIsImNsaWVudF9pZCI6IjIzMWQ0YTg2OTA1ZjBmMjYyYzVlMDNmYyIsInNjb3BlIjoicHVibGljIn0.jXHuQZe83ZO-3FZu141qzcVKXM90hth1xV08qepwHqEwEXhI_safW9UHM76c1F0m4kL-ez_FC8ANRxewqrPbjJc_Q1NJP9o8reLwwktXjzDacEpbb0jubu0Pl0VBCCcJ-gslBqYNWVXUuXgDXKVtq-doZH0dz4TVedkx1KLFaaogtCLKMwQ6AsOOyqWheCqzwjU7oYTKYddT6VeK22HvzvBFLTXaJNZOH1i6ijTldfumhcpUY5pjXwks9DzRCljI-ggkYznpOUhw_Wu9R2H2OaQnX4hmpJoOyKdxyGiOe_reUQ8LV0pBrNVq5qKjRzTmDLhMTMOOmtv6j062ERKrTw'
         }
 
-    //get ke api dan tambahkan .json untuk merespon 
+
+//get ke api dan tambahkan .json untuk merespon 
         r = requests.get(url, params=parameter).json()
         products = r['data']
 
-    //looping berisi nama, harga, dan toko
+//looping berisi nama, harga, dan toko
         for p in products:
             nama = p['name']
             harga = p['price']
             toko = p['store']
             count += 1
             print('No:', count, 'Name:', nama, 'Price:', harga, 'Store:', toko)
-    //menuliskan informasi produk ke csv
+//menuliskan informasi produk ke csv
             write.writerow([nama, harga, toko])
+
+
 
 
 PENJELASAN SCRIPT GRAFIK:
